@@ -535,8 +535,8 @@ body:not(.user-is-tabbing) a:focus {
 /* Media Queries for smaller screens */
 @media(max-width: 768px) {
     .work__box {
-        flex: 1 1 calc(100% - 2rem);
-        /* 1 box per row with gap */
+        flex: 1 1 100%;
+        /* Full width for smaller screens */
     }
 }
 
@@ -546,7 +546,6 @@ body:not(.user-is-tabbing) a:focus {
         /* Full width for very small screens */
     }
 }
-
 
 /* --------------------------------------- */
 /* ----- Clients Feedback ----- */
