@@ -38,7 +38,6 @@
     --dark-blue: #003366;
     /* New dark blue color */
     --white: #fff;
-    --white-1: #e5e5e6da;
 
     --container-max-width: 1180px;
     --container-normal-width: 800px;
@@ -532,6 +531,22 @@ body:not(.user-is-tabbing) a:focus {
     padding: 0.5rem 1rem;
     border-radius: 20px;
 }
+
+/* Media Queries for smaller screens */
+@media(max-width: 768px) {
+    .work__box {
+        flex: 1 1 calc(100% - 2rem);
+        /* 1 box per row with gap */
+    }
+}
+
+@media(max-width: 480px) {
+    .work__box {
+        flex: 1 1 100%;
+        /* Full width for very small screens */
+    }
+}
+
 
 /* --------------------------------------- */
 /* ----- Clients Feedback ----- */
