@@ -384,20 +384,33 @@ body:not(.user-is-tabbing) a:focus {
     margin-right: var(--gutter-medium);
 }
 
-@media(max-width: 500px) {
+@media(max-width: 768px) {
     .nav {
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        padding: var(--gutter-normal) var(--gutter-small);
     }
-}
 
-@media(max-width: 400px) {
+    .nav__items {
+        flex-direction: column;
+        align-items: center;
+    }
+
     .nav__item:not(:last-child) {
-        margin-right: var(--gutter-normal);
+        margin-bottom: var(--gutter-small);
+    }
+
+    .nav__link {
+        padding: var(--gutter-small-1) 0;
     }
 }
 
-@media(max-width: 300px) {
+@media(max-width: 480px) {
     .nav {
+        padding: var(--gutter-small) var(--gutter-small);
+    }
+
+    .nav__link {
         font-size: var(--font-size-small);
     }
 }
@@ -496,6 +509,34 @@ body:not(.user-is-tabbing) a:focus {
     text-align: center;
 }
 
+@media(max-width: 768px) {
+    .header {
+        background: linear-gradient(135deg, var(--dark-blue) 0%, var(--black) 100%);
+        height: auto;
+        /* Passt die Höhe automatisch an */
+        padding: var(--gutter-huge) var(--gutter-normal);
+    }
+
+    .header__text-box {
+        margin-top: 0;
+        /* Entfernt den negativen Margin */
+    }
+
+    .header__text {
+        text-align: center;
+    }
+}
+
+@media(max-width: 480px) {
+    .header {
+        padding: var(--gutter-medium) var(--gutter-small);
+    }
+
+    .header__text {
+        font-size: var(--font-size-medium);
+    }
+}
+
 .header__text-box {
     flex: 1;
     display: flex;
@@ -512,16 +553,6 @@ body:not(.user-is-tabbing) a:focus {
     margin: 1.5rem 0 3.5rem;
     font-family: 'Jost', sans-serif;
     font-size: var(--font-size-medium);
-}
-
-@media(max-width: 500px) {
-    .header {
-        text-align: left;
-    }
-
-    .header__text p {
-        transform: scale(.8);
-    }
 }
 
 /* --------------------------------------- */
