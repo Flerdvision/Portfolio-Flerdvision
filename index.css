@@ -408,12 +408,14 @@ body:not(.user-is-tabbing) a:focus {
 
 @media(max-width: 768px) {
     .nav {
-        justify-content: center;
+        justify-content: space-around;
+        /* Elemente gleichmäßig verteilen */
         padding: var(--gutter-small) var(--gutter-small);
     }
 
     .nav__items {
         flex-direction: row;
+        /* Elemente nebeneinander anordnen */
         align-items: center;
     }
 
@@ -423,6 +425,11 @@ body:not(.user-is-tabbing) a:focus {
 
     .nav__link {
         padding: var(--gutter-small-1) var(--gutter-small);
+    }
+
+    .logo-item {
+        display: none;
+        /* Logo auf mobilen Geräten ausblenden */
     }
 }
 
