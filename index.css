@@ -73,6 +73,10 @@ body {
     line-height: var(--line-height-normal);
     background: linear-gradient(135deg, var(--dark-blue) 0%, var(--black) 100%);
     overflow-x: hidden;
+    min-height: 100vh;
+    /* Stellt sicher, dass der Body mindestens die Höhe des Viewports hat */
+    margin: 0;
+    padding: 0;
 }
 
 .row {
@@ -160,7 +164,6 @@ h3 {
     text-align: center;
     max-width: var(--container-medium-width);
 }
-
 
 h2 {
     font-size: var(--font-size-large);
@@ -359,13 +362,22 @@ body:not(.user-is-tabbing) a:focus {
 
 .nav {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     padding: var(--gutter-normal) 0;
+    width: 100%;
+    background: linear-gradient(135deg, var(--dark-blue) 0%, var(--black) 100%);
+    /* Hintergrundfarbe der Navigation */
+    position: fixed;
+    /* Fixiert die Navigation oben */
+    top: 0;
+    z-index: 1000;
+    /* Stellt sicher, dass die Navigation über allem anderen liegt */
 }
 
 .nav__items {
     display: flex;
     list-style: none;
+    align-items: center;
 }
 
 .nav__item:not(:last-child) {
@@ -519,9 +531,11 @@ body:not(.user-is-tabbing) a:focus {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
+    /* Gleicher Abstand wie bei Clients Feedback */
     justify-content: center;
     overflow: hidden;
     margin-top: 4rem;
+    /* Gleicher oberer Abstand wie bei Clients Feedback */
 }
 
 .work__box {
@@ -530,24 +544,21 @@ body:not(.user-is-tabbing) a:focus {
     align-items: center;
     text-align: center;
     flex: 1 1 calc(45% - 2rem);
+    /* Breite für zwei Kästchen pro Reihe */
     margin-bottom: 4rem;
-    border: 2px solid var(--dark-blue);
+    /* Gleicher unterer Abstand wie bei Clients Feedback */
+    border: 1px solid var(--dark-blue);
+    /* Gleicher Rand wie bei Clients Feedback */
     padding: 2rem;
-    border-radius: 20px;
+    /* Gleiches Padding wie bei Clients Feedback */
+    border-radius: 10px;
+    /* Gleiche Rundung der Ecken wie bei Clients Feedback */
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     background: linear-gradient(135deg, var(--dark-blue) 0%, var(--black) 100%);
     color: var(--white);
     max-width: 100%;
     box-sizing: border-box;
     overflow: hidden;
-}
-
-.work__box:nth-child(odd) {
-    order: 1;
-}
-
-.work__box:nth-child(even) {
-    order: 2;
 }
 
 .work__box:hover {
@@ -564,8 +575,10 @@ body:not(.user-is-tabbing) a:focus {
     position: relative;
     width: 100%;
     padding-bottom: 56.25%;
+    /* Beibehalten für das Seitenverhältnis 16:9 */
     overflow: hidden;
-    border-radius: 15px;
+    border-radius: 10px;
+    /* Gleiche Rundung der Ecken wie bei Clients Feedback */
 }
 
 .work__video-box iframe {
@@ -575,7 +588,8 @@ body:not(.user-is-tabbing) a:focus {
     width: 100%;
     height: 100%;
     border: none;
-    border-radius: 15px;
+    border-radius: 10px;
+    /* Gleiche Rundung der Ecken wie bei Clients Feedback */
 }
 
 .work__list {
