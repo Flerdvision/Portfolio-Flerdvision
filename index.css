@@ -36,7 +36,6 @@
 
     --black: #000;
     --dark-blue: #003366;
-    /* New dark blue color */
     --white: #fff;
 
     --container-max-width: 1180px;
@@ -55,7 +54,6 @@
 
 html {
     font-size: 62.5%;
-    /* (16/10)*100 = 62.5% => 1rem = 10px */
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
@@ -99,12 +97,6 @@ body {
     }
 }
 
-@media(max-width: 600px) {
-    .row {
-        padding: 0 var(--gutter-small);
-    }
-}
-
 section {
     padding: var(--gutter-huge) 0;
     border-bottom: var(--border-light);
@@ -139,6 +131,35 @@ h3 {
         font-size: 6.5rem;
     }
 }
+
+.header {
+    background: linear-gradient(135deg, var(--dark-blue) 0%, var(--black) 100%);
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-size: var(--font-size-normal);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.header__text-box {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -14rem;
+    /* Ändere diesen Wert, um die Höhe der Überschrift anzupassen */
+}
+
+.header__text {
+    text-align: center;
+    max-width: var(--container-medium-width);
+}
+
 
 h2 {
     font-size: var(--font-size-large);
@@ -374,7 +395,6 @@ body:not(.user-is-tabbing) a:focus {
     padding: 1rem 0;
     text-decoration: none;
     color: var(--white-1);
-    /* Helleres Weiß als Grundfarbe */
     transition: all 0.2s;
 }
 
@@ -386,22 +406,17 @@ body:not(.user-is-tabbing) a:focus {
     right: 100%;
     display: inline-block;
     height: 2px;
-    /* Höhe der Animation */
     background: var(--white);
-    /* Farbe der Animation */
     transition: all 0.25s cubic-bezier(1, 0.68, 0.16, 0.9);
 }
 
 .nav__link:hover {
     color: var(--white);
-    /* Textfarbe bei Hover */
 }
 
 .nav__link:hover::after {
     right: 0;
-    /* Animation füllt sich */
     background: var(--white);
-    /* Weiße Linie bei Hover */
 }
 
 /* --------------------------------------- */
@@ -444,10 +459,10 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .menu-logo {
-    width: 30px;
-    /* Passen Sie die Breite nach Bedarf an */
-    height: 30px;
-    /* Passen Sie die Höhe nach Bedarf an */
+    width: 50px;
+    /* Größeres Logo */
+    height: 50px;
+    /* Größeres Logo */
 }
 
 /* --------------------------------------- */
@@ -461,31 +476,40 @@ body:not(.user-is-tabbing) a:focus {
     background-position: center;
     background-attachment: fixed;
     font-size: var(--font-size-normal);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.header__text-box {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .header__text {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    text-align: center;
+    max-width: var(--container-medium-width);
 }
 
 .header__text p {
     margin: 1.5rem 0 3.5rem;
-    max-width: var(--container-medium-width);
     font-family: 'Jost', sans-serif;
     font-size: var(--font-size-medium);
 }
 
 @media(max-width: 500px) {
     .header {
-        text-align: center;
+        text-align: left;
     }
 
     .header__text p {
         transform: scale(.8);
     }
 }
-
 
 /* --------------------------------------- */
 /* ----- Work ----- */
@@ -497,7 +521,6 @@ body:not(.user-is-tabbing) a:focus {
     justify-content: center;
     overflow: hidden;
     margin-top: 4rem;
-    /* Add margin to the top to push the boxes down */
 }
 
 .work__box {
@@ -506,21 +529,16 @@ body:not(.user-is-tabbing) a:focus {
     align-items: center;
     text-align: center;
     flex: 1 1 calc(45% - 2rem);
-    /* 2 boxes per row with gap */
     margin-bottom: 4rem;
     border: 2px solid var(--dark-blue);
     padding: 2rem;
     border-radius: 20px;
-    /* Increase border-radius to make the corners more rounded */
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     background: linear-gradient(135deg, var(--dark-blue) 0%, var(--black) 100%);
     color: var(--white);
     max-width: 100%;
-    /* Ensure the box doesn't get cut off */
     box-sizing: border-box;
-    /* Include padding and border in the element's total width and height */
     overflow: hidden;
-    /* Ensure the content doesn't overflow the rounded corners */
 }
 
 .work__box:nth-child(odd) {
@@ -533,7 +551,6 @@ body:not(.user-is-tabbing) a:focus {
 
 .work__box:hover {
     transform: translateY(-10px);
-    /* Similar to feedback__card */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
@@ -546,10 +563,8 @@ body:not(.user-is-tabbing) a:focus {
     position: relative;
     width: 100%;
     padding-bottom: 56.25%;
-    /* 16:9 */
     overflow: hidden;
     border-radius: 15px;
-    /* Ensure the video box also has rounded corners */
 }
 
 .work__video-box iframe {
@@ -560,7 +575,6 @@ body:not(.user-is-tabbing) a:focus {
     height: 100%;
     border: none;
     border-radius: 15px;
-    /* Ensure the iframe also has rounded corners */
 }
 
 .work__list {
@@ -583,14 +597,12 @@ body:not(.user-is-tabbing) a:focus {
 @media(max-width: 768px) {
     .work__box {
         flex: 1 1 100%;
-        /* Full width for smaller screens */
     }
 }
 
 @media(max-width: 480px) {
     .work__box {
         flex: 1 1 100%;
-        /* Full width for very small screens */
     }
 }
 
