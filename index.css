@@ -406,6 +406,8 @@ body:not(.user-is-tabbing) a:focus {
     top: 0;
     z-index: 1000;
     /* Stellt sicher, dass die Navigation über allem anderen liegt */
+    padding-top: var(--gutter-small);
+    /* Abstand oben hinzufügen */
 }
 
 @media(max-width: 768px) {
