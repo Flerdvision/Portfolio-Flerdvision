@@ -739,3 +739,30 @@ body:not(.user-is-tabbing) a:focus {
     text-align: center;
     padding: var(--gutter-medium) 0 var(--gutter-normal);
 }
+
+/* Navigation Abstand anpassen */
+.nav {
+    padding-top: 1rem;
+    /* Fügt zusätzlichen Abstand zum oberen Rand hinzu */
+}
+
+/* Startseite auf volle Höhe erweitern */
+.header {
+    min-height: 100vh;
+    /* Deckt mindestens die gesamte Bildschirmhöhe ab */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    /* Fügt Abstand für Inhalte hinzu */
+}
+
+/* Mobile Optimierung für den Header */
+@media(max-width: 768px) {
+    .header {
+        padding: 1.5rem;
+        /* Reduziertes Padding für mobile Geräte */
+    }
+}
