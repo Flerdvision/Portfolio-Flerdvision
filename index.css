@@ -425,11 +425,12 @@ body:not(.user-is-tabbing) a:focus {
     }
 
     .nav__item:not(:last-child) {
-        margin-right: var(--gutter-small);
+        margin-right: 1rem;
+        /* Reduzierter Abstand zwischen den Elementen */
     }
 
     .nav__link {
-        padding: var(--gutter-small-1) var(--gutter-small);
+        padding: var(--gutter-small-1) var(--gutter-small-1);
         /* Reduzierter Padding */
     }
 
