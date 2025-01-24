@@ -140,7 +140,6 @@ h3 {
 .header {
     background: linear-gradient(135deg, var(--dark-blue) 0%, var(--black) 100%);
     height: 100vh;
-    /* Stellt sicher, dass der Header die gesamte Höhe des Viewports einnimmt */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -154,9 +153,11 @@ h3 {
 
 @media(max-width: 768px) {
     .header {
-        height: 100vh;
-        /* Stellt sicher, dass der Header die gesamte Höhe des Viewports einnimmt */
-        padding: var(--gutter-medium) var(--gutter-small);
+        background: linear-gradient(135deg, var(--dark-blue) 0%, var(--black) 100%);
+        height: auto;
+        /* Passt die Höhe automatisch an */
+        padding: var(--gutter-small) var(--gutter-small);
+        /* Reduzierter Padding */
     }
 
     .header__text-box {
@@ -172,6 +173,7 @@ h3 {
 @media(max-width: 480px) {
     .header {
         padding: var(--gutter-small) var(--gutter-small);
+        /* Reduzierter Padding */
     }
 
     .header__text {
@@ -411,6 +413,7 @@ body:not(.user-is-tabbing) a:focus {
         justify-content: space-around;
         /* Elemente gleichmäßig verteilen */
         padding: var(--gutter-small) var(--gutter-small);
+        /* Reduzierter Padding */
     }
 
     .nav__items {
@@ -425,71 +428,54 @@ body:not(.user-is-tabbing) a:focus {
 
     .nav__link {
         padding: var(--gutter-small-1) var(--gutter-small);
-        font-size: var(--font-size-small);
+        /* Reduzierter Padding */
     }
 
     .logo-item {
         display: none;
         /* Logo auf mobilen Geräten ausblenden */
     }
-
-    .header {
-        height: 100vh;
-        /* Stellt sicher, dass der Header die gesamte Höhe des Viewports einnimmt */
-        padding: var(--gutter-medium) var(--gutter-small);
-    }
-
-    .header__text-box {
-        margin-top: 0;
-        /* Entfernt den negativen Margin */
-    }
-
-    .header__text {
-        text-align: center;
-    }
 }
 
-@media(min-width: 769px) {
+@media(max-width: 480px) {
     .nav {
-        justify-content: flex-end;
-        /* Elemente rechtsbündig anordnen */
-        padding: var(--gutter-normal) 0;
-    }
-
-    .nav__items {
-        flex-direction: row;
-        /* Elemente nebeneinander anordnen */
-        align-items: center;
-    }
-
-    .nav__item:not(:last-child) {
-        margin-right: var(--gutter-medium);
+        padding: var(--gutter-small) var(--gutter-small);
+        /* Reduzierter Padding */
     }
 
     .nav__link {
-        padding: 1rem 0;
-        font-size: var(--font-size-normal);
+        font-size: var(--font-size-small);
     }
+}
 
-    .logo-item {
-        display: flex;
-        /* Logo auf Desktop-PCs anzeigen */
-    }
+.nav__link {
+    position: relative;
+    display: inline-block;
+    padding: 1rem 0;
+    text-decoration: none;
+    color: var(--white-1);
+    transition: all 0.2s;
+}
 
-    .header {
-        height: 100vh;
-        /* Stellt sicher, dass der Header die gesamte Höhe des Viewports einnimmt */
-        padding: var(--gutter-huge) var(--gutter-normal);
-    }
+.nav__link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 100%;
+    display: inline-block;
+    height: 2px;
+    background: var(--white);
+    transition: all 0.25s cubic-bezier(1, 0.68, 0.16, 0.9);
+}
 
-    .header__text-box {
-        margin-top: -14rem;
-        /* Negativen Margin für Desktop-PCs beibehalten */
-    }
+.nav__link:hover {
+    color: var(--white);
+}
 
-    .header__text {
-        text-align: center;
-    }
+.nav__link:hover::after {
+    right: 0;
+    background: var(--white);
 }
 
 /* --------------------------------------- */
